@@ -14,7 +14,7 @@ export async function POST(req: Request) {
 
     const { data, error } = await resend.emails.send({
       // Utilisation des variables d'environnement
-      from: process.env.EMAIL_FROM || "Protection Nuisibles <contact@protection-nuisibles.fr>",
+      from: process.env.EMAIL_FROM || "Protection Nuisibles <info@protection-nuisibles.fr>",
       to: process.env.EMAIL_TO || "contact@protection-nuisibles.fr", 
       replyTo: email,
       subject: `🚨 Nouvelle demande : ${subject || 'Contact Site'}`,
