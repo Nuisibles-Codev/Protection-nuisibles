@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         {/* Chargement du script Google Tag Manager */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17043170000"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18366446985"
           strategy="afterInteractive"
           async
         />
@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'AW-17043170000');
+            gtag('config', 'AW-18366446985');
           `}
         </Script>
         <Header />
