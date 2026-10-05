@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://www.protection-nuisibles.fr
-
-# Sitemaps
-Sitemap: https://www.protection-nuisibles.fr/sitemap.xml

@@ -38,11 +38,20 @@ export default function RootLayout({ children }: RootLayoutProps) {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-18366446985');
+            document.addEventListener('click', function(event) {
+              var target = event.target;
+              if (!(target instanceof Element)) return;
+              var link = target.closest('a[href^="tel:"]');
+              if (!link || event.defaultPrevented) return;
+              gtag('event', 'conversion', {
+                'send_to': 'AW-18366446985/yGpHCMjW0docEIn75rVE'
+              });
+            });
           `}
         </Script>
 
         <Header />
-        <Breadcrumb /> {/* Généré automatiquement sur toutes les pages sauf l'accueil */}
+        <Breadcrumb />
         {children}
         <Facebook />
         <Footer />

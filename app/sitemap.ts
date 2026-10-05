@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/deratisation',
     '/desinsectisation',
     '/punaises',
-    '/frelons-guepes',
+    '/frelons',
     '/politique-confidentialite',
     '/cgv',
     '/mentions-legales',
@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     if (route === '') {
       priority = 1.0
       changeFrequency = 'daily'
-    } else if (['/deratisation', '/desinsectisation', '/punaises', '/frelons-guepes'].includes(route)) {
+    } else if (['/deratisation', '/desinsectisation', '/punaises', '/frelons'].includes(route)) {
       priority = 0.9
       changeFrequency = 'weekly'
     } else if (['/politique-confidentialite', '/cgv', '/mentions-legales'].includes(route)) {

@@ -104,7 +104,13 @@ export default function Form() {
               <div className="relative">
                 <Mail className="w-4 h-4 absolute left-3.5 top-3.5 text-slate-400" />
                 <input 
-                  {...register('email', { required: "Ce champ est obligatoire" })} 
+                  {...register('email', {
+                    required: "Ce champ est obligatoire",
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: "Veuillez saisir une adresse email valide",
+                    },
+                  })}
                   type="email"
                   className={`w-full bg-slate-50/80 border ${errors.email ? 'border-red-400 bg-red-50/20' : 'border-slate-200'} rounded-xl pl-10 pr-4 py-3 text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-all`}
                   placeholder="jean.dupont@email.com" 
