@@ -1,4 +1,6 @@
-export type InterventionZone = {
+import { geoZones, regions, type GeoZone } from '@/lib/zones-geo'
+
+export type FeaturedInterventionZone = {
   slug: string
   name: string
   setting: string
@@ -9,7 +11,7 @@ export type InterventionZone = {
   prevention: string
 }
 
-export const interventionZones: InterventionZone[] = [
+export const featuredInterventionZones: FeaturedInterventionZone[] = [
   {
     slug: 'perpignan',
     name: 'Perpignan',
@@ -122,6 +124,21 @@ export const interventionZones: InterventionZone[] = [
   }
 ]
 
-export function getInterventionZone(slug: string) {
-  return interventionZones.find((zone) => zone.slug === slug)
+
+/** Tous les lieux dans le rayon géographique, y compris les fiches existantes déjà enrichies. */
+export type InterventionZone = GeoZone & FeaturedInterventionZone
+export const interventionZones: InterventionZone[] = geoZones.map(zone => {
+  const featured = featuredInterventionZones.find(item => item.slug === zone.slug)
+  return {
+    ...zone,
+    setting: featured?.setting || regions[zone.region].label,
+    intro: featured?.intro || '',
+    rodents: featured?.rodents || '',
+    insects: featured?.insects || '',
+    nests: featured?.nests || '',
+    prevention: featured?.prevention || '',
+  }
+})
+export function getInterventionZone(slug: string): InterventionZone | undefined {
+  return interventionZones.find(zone => zone.slug === slug)
 }
