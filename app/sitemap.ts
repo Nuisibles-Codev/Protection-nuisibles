@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { interventionZones } from '@/lib/intervention-zones'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.protection-nuisibles.fr'
@@ -14,6 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/desinsectisation',
     '/punaises',
     '/frelons',
+    '/zones-intervention',
+    ...interventionZones.map((zone) => `/zones-intervention/${zone.slug}`),
     '/politique-confidentialite',
     '/cgv',
     '/mentions-legales',
@@ -30,6 +33,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     } else if (['/deratisation', '/desinsectisation', '/punaises', '/frelons'].includes(route)) {
       priority = 0.9
       changeFrequency = 'weekly'
+    } else if (route === '/zones-intervention' || route.startsWith('/zones-intervention/')) {
+      priority = route === '/zones-intervention' ? 0.85 : 0.75
+      changeFrequency = 'monthly'
     } else if (['/politique-confidentialite', '/cgv', '/mentions-legales'].includes(route)) {
       priority = 0.3
       changeFrequency = 'monthly'

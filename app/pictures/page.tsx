@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function PicturesPage() {
   return (
-    <main className="pt-28 pb-20 px-4 sm:px-6 max-w-6xl mx-auto w-full">
+    <main className="pt-10 pb-20 px-4 sm:px-6 max-w-6xl mx-auto w-full">
       <h1 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight text-center mb-12 border-b border-slate-100 pb-4">  
         Nos interventions en images
       </h1>      

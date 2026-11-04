@@ -4,7 +4,7 @@ export default function FrelonsMenu() {
   return (
     /* py-16 : Espacement idéal entre le haut de page et le bas */
     <section 
-      className="py-16 px-4 sm:px-6 max-w-4xl mx-auto w-full text-slate-700 leading-relaxed" 
+      className="pt-10 pb-16 px-4 sm:px-6 max-w-4xl mx-auto w-full text-slate-700 leading-relaxed" 
       aria-label="Destruction de nids de guêpes et frelons dans les Pyrénées-Orientales"
     >
         

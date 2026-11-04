@@ -4,7 +4,7 @@ export default function DesinsectisationMenu() {
   return (
     /* py-16 : Donne de l'air entre le haut de la page et le bas */
     <section 
-      className="py-16 px-4 sm:px-6 max-w-4xl mx-auto w-full text-slate-700 leading-relaxed" 
+      className="pt-10 pb-16 px-4 sm:px-6 max-w-4xl mx-auto w-full text-slate-700 leading-relaxed" 
       aria-label="Désinsectisation à Perpignan et dans les Pyrénées-Orientales"
     >
         

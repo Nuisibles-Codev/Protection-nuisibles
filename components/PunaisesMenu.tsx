@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function PunaisesMenu() {
   return (
-    /* pt-28 pour passer sous le Header fixe. max-w-5xl pour une mise en page aérée */
+    /* pt-10 pour passer sous le Header fixe. max-w-5xl pour une mise en page aérée */
     <section 
       className="pt-28 pb-20 px-4 sm:px-6 max-w-5xl mx-auto w-full text-slate-700 leading-relaxed" 
       aria-label="Traitement punaises de lit à Perpignan et dans les Pyrénées-Orientales"
