@@ -36,9 +36,9 @@ const sources = {
     license: 'CC BY-SA 4.0',
   },
   deratisation: {
-    src: '/image12.png',
-    alt: 'Équipement de lutte contre les nuisibles',
-    caption: 'Inspection et traitement anti-rongeurs',
+    src: '/deratisation-inspection-pro.avif',
+    alt: 'Illustration d’un technicien inspectant le bas d’un meuble de cuisine pour repérer les passages de rats ou souris',
+    caption: 'Inspection des points d’entrée des rongeurs — illustration générée par IA',
     credit: '',
     url: '',
     license: '',
@@ -59,7 +59,7 @@ export default function ServiceVisual({ topic, priority = false, className = '' 
           src={item.src}
           alt={item.alt}
           fill
-          unoptimized={topic !== 'deratisation'}
+          unoptimized
           priority={priority}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 48vw, 460px"
           className="object-cover"
