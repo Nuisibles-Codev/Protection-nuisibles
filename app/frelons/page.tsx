@@ -1,5 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
+import ServiceLocalLinks from '@/components/ServiceLocalLinks'
 import FrelonsMenu from '@/components/FrelonsMenu'
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function FrelonsPage() {
   return (
     <main className="w-full">
       <FrelonsMenu /> 
+      <ServiceLocalLinks service="frelons" />
     </main>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { interventionZones } from '@/lib/intervention-zones'
+import { featuredInterventionZones } from '@/lib/intervention-zones'
 import { Phone, MapPin, ShieldCheck, Mail } from 'lucide-react'
 
 export default function Footer() {
@@ -121,10 +121,10 @@ export default function Footer() {
         <nav aria-label="Zones d’intervention" className="mt-12 border-t border-slate-800 pt-8">
           <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-white">Nos zones d’intervention dans le 66</h3>
           <div className="flex flex-wrap gap-x-5 gap-y-3 text-sm">
-            {interventionZones.map((zone) => (
+            {featuredInterventionZones.map((zone) => (
               <Link key={zone.slug} href={`/zones-intervention/${zone.slug}`} className="transition-colors hover:text-amber-500">{zone.name}</Link>
             ))}
-            <Link href="/zones-intervention" className="font-semibold text-amber-500 hover:text-white">Toutes les communes du 66</Link>
+            <Link href="/zones-intervention" className="font-semibold text-amber-500 hover:text-white">Toutes les communes autour de Perpignan</Link>
           </div>
         </nav>
       </div>
