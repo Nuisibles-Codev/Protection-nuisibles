@@ -48,7 +48,7 @@ export default async function InterventionVillePage({ params }: Props) {
     '@type': 'Service',
     '@id': `${canonical}#service`,
     name: `Lutte contre les nuisibles à ${zone.name}`,
-    serviceType: ['Dératisation', 'Désinsectisation', 'Traitement des punaises de lit', 'Destruction de nids de guêpes et de frelons'],
+    serviceType: ['Dératisation', 'Désinsectisation', 'Traitement des punaises de lit', 'Destruction de nids de guêpes et de frelons', 'Dépigeonnage et protection anti-pigeons'],
     provider: { '@type': 'Organization', name: 'Protection Nuisibles', url: baseUrl, telephone: '+33757516414' },
     areaServed: { '@type': 'Place', name: `${zone.name} (${zone.department}), France` },
     url: canonical,
@@ -84,6 +84,7 @@ export default async function InterventionVillePage({ params }: Props) {
         <a href="#desinsectisation" className="rounded-full border border-slate-200 px-4 py-2 text-brand-blue hover:bg-slate-50">Désinsectisation</a>
         <a href="#punaises" className="rounded-full border border-slate-200 px-4 py-2 text-brand-blue hover:bg-slate-50">Punaises de lit</a>
         <a href="#frelons" className="rounded-full border border-slate-200 px-4 py-2 text-brand-blue hover:bg-slate-50">Guêpes et frelons</a>
+        <a href="#depigeonnage" className="rounded-full border border-slate-200 px-4 py-2 text-brand-blue hover:bg-slate-50">Dépigeonnage</a>
         <a href="#questions" className="rounded-full border border-slate-200 px-4 py-2 text-brand-blue hover:bg-slate-50">Questions fréquentes</a>
       </nav>
 
@@ -146,6 +147,27 @@ export default async function InterventionVillePage({ params }: Props) {
         <p className="mb-4 leading-relaxed">{practical.nests} {local.fTip}</p>
         <p className="leading-relaxed">Pour une <strong>destruction de nid de frelons à {zone.name}</strong>, évitez toute tentative au feu, à l'eau ou avec un produit inadapté. Signalez la localisation, les accès et les zones fréquentées lors de votre prise de contact.</p>
         <Link href="/frelons" className="mt-5 inline-block font-bold text-brand-blue underline">Consulter notre prestation guêpes et frelons</Link>
+      </section>
+
+      <section id="depigeonnage" aria-labelledby="title-depigeonnage" className="scroll-mt-28 border-t border-slate-200 py-12">
+        <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-blue">Pigeons · Pics anti-pigeons · Filets de protection</p>
+        <h2 id="title-depigeonnage" className="mb-5 text-2xl font-black text-slate-900 sm:text-3xl">Dépigeonnage à {zone.name} : protéger balcons, toitures et façades</h2>
+        <p className="mb-4 leading-relaxed">
+          Pour un problème de pigeons à {zone.name}, le diagnostic commence par la recherche des points de stationnement : rebords de fenêtres, terrasses, corniches, toitures ou installations techniques. Les supports doivent être étudiés avant de décider si des pics anti-pigeons, des filets ou des protections d'accès sont appropriés.
+        </p>
+        <p className="mb-4 leading-relaxed">
+          {['littoral66', 'littoral11', 'coteVermeille'].includes(zone.region)
+            ? "Dans les logements et hébergements du littoral, l'accessibilité des balcons, les contraintes d'entretien et les périodes d'occupation influencent les dispositifs à envisager."
+            : ['metropole', 'salanque', 'roussillon'].includes(zone.region)
+              ? "Dans les immeubles, maisons et locaux professionnels, la présence de pigeons peut concerner les rebords, enseignes, cours ou appuis. La protection doit tenir compte des façades et des zones voisines de perchage."
+              : "Pour les maisons, dépendances ou bâtiments anciens, l'état des supports et la possibilité d'accéder aux avancées de toit doivent être vérifiés avant toute pose."}
+        </p>
+        <p className="mb-4 leading-relaxed">
+          La présence de nids occupés ou d'autres espèces d'oiseaux impose une vérification préalable de la réglementation. {isAude
+            ? "Pour cette commune de l'Aude, les possibilités de déplacement sont à confirmer avant toute intervention."
+            : "Les modalités de protection et les éventuels travaux de nettoyage sont confirmés après examen des lieux."}
+        </p>
+        <Link href="/depigeonnage" className="mt-2 inline-block font-bold text-brand-blue underline">Découvrir nos solutions de dépigeonnage et protection anti-pigeons</Link>
       </section>
 
       <section aria-labelledby="prevenir" className="mb-14 rounded-3xl border border-slate-100 bg-slate-50 p-7 sm:p-9">
