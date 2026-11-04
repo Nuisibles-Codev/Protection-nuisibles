@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { geoZones, regions } from '@/lib/zones-geo'
 import { getInterventionZone, interventionZones } from '@/lib/intervention-zones'
 import { getLocalEditorial } from '@/lib/local-seo-editorial'
+import { serviceGuides } from '@/lib/local-service-guides'
 
 type Props = { params: Promise<{ ville: string }> }
 const baseUrl = 'https://www.protection-nuisibles.fr'
@@ -36,6 +37,7 @@ export default async function InterventionVillePage({ params }: Props) {
   const zone = getInterventionZone(ville)
   if (!zone) notFound()
   const local = getLocalEditorial(zone)
+  const practical = serviceGuides(zone)
   const area = local.sector
   const isAude = zone.department === '11'
   const region = regions[zone.region]
@@ -112,7 +114,7 @@ export default async function InterventionVillePage({ params }: Props) {
         <h2 id="title-deratisation" className="mb-5 text-2xl font-black text-slate-900 sm:text-3xl">Dératisation à {zone.name} : éliminer rats et souris</h2>
         <p className="mb-4 leading-relaxed">{zone.rodents || area.rongeurs}</p>
         {zone.rodents && <p className="mb-4 leading-relaxed">{area.rongeurs}</p>}
-        <p className="mb-4 leading-relaxed">{local.rTip} Les indices recueillis servent à décider de la mise en place de pièges, de postes sécurisés ou de mesures d'obturation, selon le diagnostic et les contraintes du bâtiment.</p>
+        <p className="mb-4 leading-relaxed">{practical.rats} {local.rTip}</p>
         <p className="leading-relaxed">Pour une <strong>dératisation à {zone.name}</strong>, l'objectif n'est pas seulement de réduire l'activité visible : la recherche de points d'entrée et les conseils de protection des denrées limitent le risque de réapparition.</p>
         <Link href="/deratisation" className="mt-5 inline-block font-bold text-brand-blue underline">Découvrir notre méthode de dératisation</Link>
       </section>
@@ -122,7 +124,7 @@ export default async function InterventionVillePage({ params }: Props) {
         <h2 id="title-desinsectisation" className="mb-5 text-2xl font-black text-slate-900 sm:text-3xl">Désinsectisation à {zone.name} : identifier le foyer avant de traiter</h2>
         <p className="mb-4 leading-relaxed">{zone.insects || area.insectes}</p>
         {zone.insects && <p className="mb-4 leading-relaxed">{area.insectes}</p>}
-        <p className="mb-4 leading-relaxed">{local.iTip} La solution peut nécessiter des traitements localisés, des mesures d'hygiène ou des recommandations d'entretien, suivant l'espèce et l'ampleur du problème.</p>
+        <p className="mb-4 leading-relaxed">{practical.insects} {local.iTip}</p>
         <p className="leading-relaxed">Une <strong>désinsectisation à {zone.name}</strong> commence par la confirmation de l'insecte : un traitement contre les blattes n'est pas interchangeable avec une prise en charge de puces ou de fourmis.</p>
         <Link href="/desinsectisation" className="mt-5 inline-block font-bold text-brand-blue underline">Voir les étapes de désinsectisation</Link>
       </section>
@@ -131,7 +133,7 @@ export default async function InterventionVillePage({ params }: Props) {
         <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-blue">Literie · Chambres · Logements</p>
         <h2 id="title-punaises" className="mb-5 text-2xl font-black text-slate-900 sm:text-3xl">Traitement des punaises de lit à {zone.name}</h2>
         <p className="mb-4 leading-relaxed">Une suspicion de punaises de lit nécessite de rechercher des indices dans la literie, le sommier, les recoins proches des couchages et les textiles concernés. Les piqûres seules ne suffisent pas à confirmer leur présence.</p>
-        <p className="mb-4 leading-relaxed">{zone.name} peut présenter des configurations d'hébergement variées : maison, appartement, chambre louée ou logement peu occupé. La préparation, les précautions et les éventuels contrôles ultérieurs dépendent du constat établi dans les pièces.</p>
+        <p className="mb-4 leading-relaxed">{practical.bedbugs}</p>
         <p className="leading-relaxed">Évitez de déplacer des meubles infestés d'une chambre à l'autre avant le diagnostic. Les méthodes de traitement et le nombre d'interventions éventuelles sont déterminés selon la situation, sans promettre une élimination immédiate universelle.</p>
         <Link href="/punaises" className="mt-5 inline-block font-bold text-brand-blue underline">Comprendre le traitement anti-punaises de lit</Link>
       </section>
@@ -141,7 +143,7 @@ export default async function InterventionVillePage({ params }: Props) {
         <h2 id="title-frelons" className="mb-5 text-2xl font-black text-slate-900 sm:text-3xl">Destruction de nids de frelons à {zone.name} et élimination de nids de guêpes</h2>
         <p className="mb-4 leading-relaxed">{zone.nests || area.frelons}</p>
         {zone.nests && <p className="mb-4 leading-relaxed">{area.frelons}</p>}
-        <p className="mb-4 leading-relaxed">{local.fTip} L'identification de l'espèce, l'évaluation de la hauteur du nid et la protection des personnes présentes déterminent les modalités de neutralisation.</p>
+        <p className="mb-4 leading-relaxed">{practical.nests} {local.fTip}</p>
         <p className="leading-relaxed">Pour une <strong>destruction de nid de frelons à {zone.name}</strong>, évitez toute tentative au feu, à l'eau ou avec un produit inadapté. Signalez la localisation, les accès et les zones fréquentées lors de votre prise de contact.</p>
         <Link href="/frelons" className="mt-5 inline-block font-bold text-brand-blue underline">Consulter notre prestation guêpes et frelons</Link>
       </section>
@@ -150,7 +152,7 @@ export default async function InterventionVillePage({ params }: Props) {
         <h2 id="prevenir" className="mb-5 text-2xl font-black text-slate-900">Prévention et suivi à {zone.name}</h2>
         <p className="mb-4 leading-relaxed">{zone.prevention || area.conseils}</p>
         {zone.prevention && <p className="mb-4 leading-relaxed">{area.conseils}</p>}
-        <p className="leading-relaxed">Après le diagnostic et le traitement, les recommandations peuvent comprendre le contrôle des ouvertures, la gestion des denrées, un entretien ciblé et un suivi des zones sensibles. Elles sont adaptées au nuisible rencontré et ne remplacent pas l'examen des lieux.</p>
+        <p className="leading-relaxed">{practical.followUp} Les recommandations restent adaptées au nuisible rencontré et ne remplacent pas l'examen des lieux.</p>
       </section>
 
       <section id="questions" aria-labelledby="faq-title" className="mb-14 scroll-mt-28">
