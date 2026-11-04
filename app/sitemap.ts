@@ -3,7 +3,8 @@ import { interventionZones } from '@/lib/intervention-zones'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.protection-nuisibles.fr'
-  const currentDate = new Date()
+  // Éviter d'annoncer artificiellement une mise à jour de toutes les pages à chaque build.
+  const actualLocalPublicationDate = new Date('2026-11-04T00:00:00+01:00')
 
   // Vos routes statiques et de services
   const routes = [
@@ -34,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority = 0.9
       changeFrequency = 'weekly'
     } else if (route === '/zones-intervention' || route.startsWith('/zones-intervention/')) {
-      priority = route === '/zones-intervention' ? 0.85 : 0.75
+      priority = route === '/zones-intervention' ? 0.85 : 0.65
       changeFrequency = 'monthly'
     } else if (['/politique-confidentialite', '/cgv', '/mentions-legales'].includes(route)) {
       priority = 0.3
@@ -43,7 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     return {
       url: `${baseUrl}${route}`,
-      lastModified: currentDate,
+      ...(route === '/zones-intervention' || route.startsWith('/zones-intervention/') ? { lastModified: actualLocalPublicationDate } : {}),
       changeFrequency,
       priority,
     }
