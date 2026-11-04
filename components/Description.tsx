@@ -4,6 +4,7 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Description() {
   // Hooks Intersection Observer pour déclencher les animations au défilement
@@ -54,6 +55,11 @@ export default function Description() {
               Nous vous proposons des solutions efficaces contre les rats, souris, insectes, guêpes, frelons et autres nuisibles, aussi bien en milieu urbain que rural.
             </motion.p>
           </div>
+        </div>
+
+        <div className="mb-16 text-center">
+          <p className="mb-4 text-base text-slate-700">Perpignan, Canet-en-Roussillon, Argelès-sur-Mer, Saint-Cyprien, Saint-Estève, Cabestany, Rivesaltes, Elne, Céret, Prades et Le Barcarès.</p>
+          <Link href="/zones-intervention" className="inline-flex rounded-xl bg-brand-blue px-6 py-3 font-bold text-white transition-colors hover:bg-blue-800">Découvrir toutes nos zones d’intervention</Link>
         </div>
 
         {/* TITRE 2 : POURQUOI CHOISIR */}

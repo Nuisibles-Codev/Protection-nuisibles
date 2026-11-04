@@ -3,11 +3,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Script from 'next/script';
+import { interventionZones } from '@/lib/intervention-zones';
 
 // Dictionnaire pour traduire les URLs en titres lisibles (et optimisés SEO)
 const routeLabels: Record<string, string> = {
   punaises: 'Punaises de lit',
+  'zones-intervention': 'Zones d’intervention',
   desinsectisation: 'Désinsectisation',
   deratisation: 'Dératisation',
   frelons: 'Guêpes & Frelons',
@@ -31,7 +32,7 @@ export default function Breadcrumb() {
   // Construction des éléments pour le Fil d'Ariane & Données structurées
   const breadcrumbItems = segments.map((segment, index) => {
     const href = '/' + segments.slice(0, index + 1).join('/');
-    const label = routeLabels[segment] || segment.replace(/-/g, ' ');
+    const label = routeLabels[segment] || interventionZones.find((zone) => zone.slug === segment)?.name || segment.replace(/-/g, ' ');
     return { label, href };
   });
 
@@ -55,14 +56,10 @@ export default function Breadcrumb() {
   return (
     <>
       {/* Script JSON-LD injecté dynamiquement pour le SEO */}
-      <Script
-        id={`breadcrumb-jsonld-${pathname}`}
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
 
       {/* Rendu Visuel */}
-      <div className="w-full bg-slate-50 border-b border-slate-100 pt-24 pb-3 px-4 sm:px-6">
+      <div className="w-full bg-slate-50 border-b border-slate-100 mt-20 py-3 px-4 sm:px-6">
         <nav aria-label="Fil d'Ariane" className="max-w-5xl mx-auto text-xs sm:text-sm text-slate-500">
           <ol className="flex items-center space-x-2 flex-wrap">
             <li>

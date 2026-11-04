@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   title: 'Traitement Punaises de Lit à Perpignan - Protection Nuisibles 66',
   description: "Expert en traitement des punaises de lit à Perpignan et dans les Pyrénées-Orientales (66). Éradication rapide, discrète et garantie avec Protection Nuisibles.",
   alternates: {
-    canonical: 'https://www.protection-nuisibles.fr/punaises-de-lit',
+    canonical: 'https://www.protection-nuisibles.fr/punaises',
   },
   openGraph: {
     title: 'Traitement Punaises de Lit à Perpignan - Protection Nuisibles 66',
     description: "Expert en traitement des punaises de lit à Perpignan et dans les Pyrénées-Orientales (66). Éradication rapide, discrète et garantie avec Protection Nuisibles.",
-    url: 'https://www.protection-nuisibles.fr/punaises-de-lit',
+    url: 'https://www.protection-nuisibles.fr/punaises',
     siteName: 'Protection Nuisibles',
     locale: 'fr_FR',
     type: 'website',

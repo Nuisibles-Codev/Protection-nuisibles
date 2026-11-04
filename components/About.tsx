@@ -3,7 +3,7 @@ import React from 'react'
 export default function About() {
   return (
     /* py-16 : Espace régulier en haut et en bas. max-w-3xl pour une lecture optimale */
-    <section className="py-16 px-4 sm:px-6 max-w-3xl mx-auto w-full text-slate-700 leading-relaxed">       
+    <section className="pt-10 pb-16 px-4 sm:px-6 max-w-3xl mx-auto w-full text-slate-700 leading-relaxed">       
         {/* TITRE PRINCIPAL DE LA PAGE */}
         <h1 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mb-8 border-b border-slate-100 pb-4 text-center md:text-left"> 
           Qui sommes-nous ? 
