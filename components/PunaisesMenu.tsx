@@ -1,155 +1,88 @@
-import React from 'react'
-import Image from 'next/image'
+import Link from 'next/link'
+import ServiceVisual from '@/components/ServiceVisual'
+
+const protocol = [
+  ['Inspection et identification', "Recherche d'indices autour des coutures de matelas, sommiers, plinthes et mobiliers. Des piqûres seules ne suffisent pas pour confirmer une infestation."],
+  ['Préparation du logement', "Consignes adaptées pour le linge, les objets, la literie et l'accès aux zones concernées. Évitez de déplacer des textiles ou des meubles sans précaution."],
+  ['Traitement adapté', "Choix d'une méthode en fonction des pièces touchées et de l'ampleur de la situation. Des techniques thermiques ou des produits autorisés peuvent être envisagés selon le diagnostic."],
+  ['Contrôle et prévention', "La nécessité d'un nouveau passage ou d'un contrôle dépend du protocole retenu et des observations ultérieures ; aucune garantie de résultat instantané n'est présumée."],
+]
 
 export default function PunaisesMenu() {
   return (
-    /* pt-10 pour passer sous le Header fixe. max-w-5xl pour une mise en page aérée */
-    <section 
-      className="pt-28 pb-20 px-4 sm:px-6 max-w-5xl mx-auto w-full text-slate-700 leading-relaxed" 
-      aria-label="Traitement punaises de lit à Perpignan et dans les Pyrénées-Orientales"
-    >
-      
-      {/* 1. TITRE PRINCIPAL H1 TOUT EN HAUT (SEO) */}
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight text-center mb-12 border-b border-slate-100 pb-6">
-        Traitement Punaises de Lit à Perpignan et dans les Pyrénées-Orientales (66)
-      </h1>
+    <section className="mx-auto w-full max-w-6xl px-4 pb-16 pt-10 text-slate-700 sm:px-6">
+      <header className="mb-10">
+        <p className="mb-3 text-sm font-bold uppercase tracking-wider text-brand-blue">Diagnostic · Traitement · Suivi dans le 66</p>
+        <h1 className="mb-5 max-w-5xl text-3xl font-black leading-tight text-slate-900 sm:text-5xl">Traitement des punaises de lit à Perpignan et dans les Pyrénées-Orientales</h1>
+        <p className="max-w-4xl text-lg leading-relaxed">Protection Nuisibles vous accompagne pour identifier une infestation, préparer les pièces et définir un <strong>traitement des punaises de lit à Perpignan</strong> adapté au logement. Nous intervenons pour les particuliers et les professionnels dans le département 66.</p>
+      </header>
 
-      {/* 2. SECTION PRÉSENTATION / ACCROCHE */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16 bg-slate-50 p-6 rounded-2xl border border-slate-100">
-        <div className="relative w-full h-[250px] sm:h-[300px] rounded-xl overflow-hidden shadow-xs border border-slate-200">
-          <Image
-            src="/image13.png"
-            alt="Inspection et détection de punaises de lit"
-            fill
-            sizes="(max-width: 768px) 100vw, 500px"
-            className="object-cover"
-            priority
-          />
-        </div>
-        <div className="text-base sm:text-lg text-slate-800 font-medium">
-          <p>
-            Chez <strong className="text-brand-blue font-semibold">Protection Nuisibles</strong>, nous sommes experts dans le <strong className="text-slate-900 font-bold">traitement des punaises de lit à Perpignan</strong> et dans tout le département 66. 
-            Nos méthodes professionnelles permettent d’<strong className="text-brand-blue font-semibold">éliminer les punaises de lit et leurs œufs</strong> de manière rapide, sécurisée et durable.
-          </p>
-        </div>
-      </section>
-
-      {/* 3. LES DANGERS ET NUISANCES DES PUNAISES DE LIT */}
-      <section aria-labelledby="dangers-punaises" className="mb-16">       
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center bg-white">
-          <div className="md:col-span-1 relative w-full h-[220px] rounded-xl overflow-hidden border border-slate-200 shadow-xs">
-            <Image 
-              src="/image10.png" 
-              alt="Dégâts et démangeaisons causés par les punaises de lit" 
-              fill
-              sizes="(max-width: 768px) 100vw, 300px"
-              className="object-cover"
-            />
-          </div>
-          <div className="md:col-span-2">
-            <h2 id="dangers-punaises" className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-4">
-              Pourquoi faut-il agir immédiatement contre les punaises de lit ?
-            </h2>
-            <div className="space-y-3 text-base">
-              <p>
-                Les <strong className="text-slate-900 font-semibold">punaises de lit</strong> se multiplient à une vitesse fulgurante et se glissent dans le moindre interstice (sommiers, matelas, plinthes, prises électriques). 
-                Leurs <strong className="text-slate-900 font-semibold">piqûres répétées</strong> provoquent des démangeaisons intenses, des réactions allergiques et des troubles sévères du sommeil.
-              </p>
-              <p>
-                Au-delà des impacts physiques, une infestation génère un fort <strong className="text-slate-900 font-semibold">stress psychologique et de l'anxiété</strong> au quotidien. 
-                Tenter de les éradiquer soi-même avec des produits grand public s'avère souvent inefficace et risque de les disperser dans d'autres pièces de votre logement.
-              </p>
-              <p>
-                Pour stopper l'infestation avant qu'elle ne devienne incontrôlable, l'intervention d'un expert est indispensable. 
-                <strong className="text-brand-blue font-medium"> Protection Nuisibles</strong> déploie des solutions professionnelles pour détruire les adultes, les larves et les œufs.
-              </p>
-            </div>
+      <section className="mb-14 grid gap-8 lg:grid-cols-2 lg:items-start">
+        <ServiceVisual topic="punaises" priority />
+        <div className="space-y-4 leading-relaxed">
+          <h2 className="text-2xl font-black text-slate-900">Comment reconnaître une punaise de lit ?</h2>
+          <p>La punaise de lit est un petit insecte brun, aplati, qui recherche les endroits proches du couchage. Elle peut se cacher dans les coutures du matelas, derrière la tête de lit, dans le sommier ou les fissures du mobilier.</p>
+          <p>Des points noirs, des mues, des insectes visibles et des piqûres peuvent faire suspecter une infestation. Toutefois, les réactions cutanées sont variables et d'autres insectes peuvent être confondus avec les punaises. <strong>La confirmation du nuisible est indispensable avant de traiter.</strong></p>
+          <p>Une chambre d'hôtel, une location saisonnière, un appartement et une maison ne présentent pas les mêmes contraintes d'accès, de préparation ou de réoccupation. Le protocole doit tenir compte des surfaces et de l'activité constatée.</p>
+          <div className="flex flex-wrap gap-3 pt-2">
+            <Link href="/contact" className="rounded-xl bg-brand-red px-5 py-3 font-bold text-white hover:bg-red-700">Demander un devis gratuit</Link>
+            <a href="tel:+33757516414" className="rounded-xl border border-slate-300 px-5 py-3 font-bold text-brand-blue">07 57 51 64 14</a>
           </div>
         </div>
       </section>
 
-      {/* 4. NOTRE PROCESSUS D'INTERVENTION */}
-      <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-8 text-center">
-        Notre protocole d'éradication professionnel
-      </h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-        
-        {/* ÉTAPE 1 */}
-        <div className="bg-slate-50/60 p-5 rounded-2xl border border-slate-100 flex gap-4 items-start">
-          <div className="relative w-24 h-24 rounded-lg overflow-hidden shrink-0 border border-slate-200">
-            <Image src="/image13.png" alt="Détection et inspection" fill className="object-cover" />
-          </div>
-          <div>
-            <h3 className="font-bold text-slate-900 text-base mb-1">1. Diagnostic & Détection</h3>
-            <p className="text-sm text-slate-600">Inspection minutieuse des nids potentiels (literie, mobilier, plinthes) pour évaluer le niveau d'infestation et choisir la méthode adaptée.</p>
-          </div>
+      <section className="mb-14 rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+        <h2 className="mb-6 text-2xl font-black text-slate-900">Les principaux signes d'une infestation de punaises de lit</h2>
+        <div className="grid gap-6 sm:grid-cols-2">
+          <article><h3 className="mb-2 text-lg font-bold text-slate-900">Indices dans la literie</h3><p className="leading-relaxed">Recherchez les insectes, mues ou petites traces sombres dans les coutures, à proximité du sommier et dans les recoins du mobilier. La literie peut être concernée même dans un logement entretenu.</p></article>
+          <article><h3 className="mb-2 text-lg font-bold text-slate-900">Piqûres et démangeaisons</h3><p className="leading-relaxed">Les piqûres peuvent provoquer un inconfort et perturber le sommeil, mais leur apparence ne suffit pas à identifier l'espèce. Une inspection permet de rechercher des indices matériels.</p></article>
+          <article><h3 className="mb-2 text-lg font-bold text-slate-900">Zones à contrôler</h3><p className="leading-relaxed">Les punaises peuvent se dissimuler dans des interstices proches des lieux de repos. Si plusieurs pièces présentent des indices, leur inspection doit être organisée sans déplacer inutilement les objets.</p></article>
+          <article><h3 className="mb-2 text-lg font-bold text-slate-900">Gestes à éviter</h3><p className="leading-relaxed">Évitez les produits improvisés, la dispersion du linge et le déplacement d'un meuble suspect dans une autre chambre. Ces gestes peuvent compliquer le diagnostic et la prise en charge.</p></article>
         </div>
+      </section>
 
-        {/* ÉTAPE 2 */}
-        <div className="bg-slate-50/60 p-5 rounded-2xl border border-slate-100 flex gap-4 items-start">
-          <div className="relative w-24 h-24 rounded-lg overflow-hidden shrink-0 border border-slate-200">
-            <Image src="/image16.png" alt="Préparation des lieux" fill className="object-cover" />
-          </div>
-          <div>
-            <h3 className="font-bold text-slate-900 text-base mb-1">2. Protocoles de préparation</h3>
-            <p className="text-sm text-slate-600">Recommandations précises pour préparer les pièces et le linge avant notre passage afin d'optimiser l'efficacité du traitement.</p>
-          </div>
+      <section className="mb-14">
+        <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-blue">Intervention professionnelle</p>
+        <h2 className="mb-4 text-2xl font-black text-slate-900 sm:text-3xl">Notre protocole de lutte contre les punaises de lit</h2>
+        <p className="mb-7 max-w-4xl leading-relaxed">Le protocole est construit à partir du diagnostic, pas d'une procédure identique pour toutes les infestations. Les consignes de sécurité et d'accès aux pièces sont précisées avant l'intervention.</p>
+        <div className="grid gap-5 md:grid-cols-2">
+          {protocol.map(([title, detail], index) => (
+            <article key={title} className="rounded-2xl border border-slate-200 p-6">
+              <span className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-blue font-black text-white">{index + 1}</span>
+              <h3 className="mb-3 text-xl font-bold text-slate-900">{title}</h3>
+              <p className="leading-relaxed">{detail}</p>
+            </article>
+          ))}
         </div>
+      </section>
 
-        {/* ÉTAPE 3 */}
-        <div className="bg-slate-50/60 p-5 rounded-2xl border border-slate-100 flex gap-4 items-start">
-          <div className="relative w-24 h-24 rounded-lg overflow-hidden shrink-0 border border-slate-200">
-            <Image src="/image19.png" alt="Traitement choc" fill className="object-cover" />
-          </div>
-          <div>
-            <h3 className="font-bold text-slate-900 text-base mb-1">3. Traitement choc & Éradication</h3>
-            <p className="text-sm text-slate-600">Application de traitements biocides et/ou thermiques professionnels ciblant les punaises à tous les stades de leur développement (œufs, larves, adultes).</p>
-          </div>
+      <section className="mb-14 grid items-start gap-8 lg:grid-cols-2">
+        <div>
+          <h2 className="mb-4 text-2xl font-black text-slate-900">Préparer et sécuriser les pièces concernées</h2>
+          <p className="mb-4 leading-relaxed">Signalez les chambres touchées, les éventuels produits déjà utilisés et les observations récentes. La préparation du linge, la protection des objets et le rangement autour des couchages sont définis après l'inspection.</p>
+          <p className="leading-relaxed">Le lavage ou traitement thermique des textiles compatibles peut faire partie des recommandations. Ne jetez pas systématiquement votre literie : les mesures doivent être proportionnées à la situation réelle.</p>
         </div>
-
-        {/* ÉTAPE 4 */}
-        <div className="bg-slate-50/60 p-5 rounded-2xl border border-slate-100 flex gap-4 items-start">
-          <div className="relative w-24 h-24 rounded-lg overflow-hidden shrink-0 border border-slate-200">
-            <Image src="/image18.png" alt="Contrôle et suivi" fill className="object-cover" />
-          </div>
-          <div>
-            <h3 className="font-bold text-slate-900 text-base mb-1">4. Passage de contrôle & Garantie</h3>
-            <p className="text-sm text-slate-600">Deuxième passage systématique pour s'assurer de l'élimination totale du cycle de reproduction et mise en place de pièges de détection.</p>
-          </div>
+        <div className="rounded-2xl border border-blue-100 bg-blue-50 p-7">
+          <h3 className="mb-4 text-xl font-bold text-slate-900">Particuliers et professionnels du tourisme</h3>
+          <p className="mb-4 leading-relaxed">Pour les hôtels, locations saisonnières et hébergements, le diagnostic prend aussi en compte l'occupation des chambres et les conditions de remise en service. Nous adaptons les conseils pour limiter les déplacements d'objets et faciliter le suivi.</p>
+          <p className="leading-relaxed">Secteurs : Perpignan, Cabestany, Saint-Estève, Canet-en-Roussillon, Saint-Cyprien, Argelès-sur-Mer et autres communes des Pyrénées-Orientales.</p>
         </div>
+      </section>
 
+      <section className="mb-12">
+        <h2 className="mb-6 text-2xl font-black text-slate-900">Questions fréquentes sur les punaises de lit</h2>
+        <div className="space-y-4">
+          <details className="rounded-xl border border-slate-200 p-5"><summary className="cursor-pointer font-bold text-slate-900">Quel est le prix d'un traitement des punaises de lit à Perpignan ?</summary><p className="mt-3 leading-relaxed">Le devis dépend des surfaces, de l'étendue de l'infestation et du protocole. Un prix unique sans diagnostic serait peu fiable.</p></details>
+          <details className="rounded-xl border border-slate-200 p-5"><summary className="cursor-pointer font-bold text-slate-900">Faut-il prévoir deux passages systématiquement ?</summary><p className="mt-3 leading-relaxed">Non. Le besoin d'un nouveau passage ou d'un contrôle est déterminé par les observations, le traitement retenu et les vérifications réalisées.</p></details>
+          <details className="rounded-xl border border-slate-200 p-5"><summary className="cursor-pointer font-bold text-slate-900">Les punaises de lit sont-elles liées à un manque d'hygiène ?</summary><p className="mt-3 leading-relaxed">Non. Leur présence peut concerner n'importe quel type d'hébergement. La recherche des insectes et une prise en charge adaptée sont prioritaires.</p></details>
+        </div>
+      </section>
+
+      <div className="rounded-3xl bg-brand-blue p-8 text-center text-white">
+        <h2 className="mb-3 text-2xl font-black">Vous suspectez des punaises de lit à Perpignan ?</h2>
+        <p className="mx-auto mb-6 max-w-2xl leading-relaxed">Décrivez les signes, les pièces concernées et l'utilisation du logement. Nous étudierons une intervention adaptée, sans promesse de résultat uniforme pour toutes les situations.</p>
+        <Link href="/contact" className="inline-block rounded-xl bg-white px-7 py-3 font-bold text-brand-blue">Obtenir un devis gratuit</Link>
       </div>
-
-      {/* 5. DERNIÈRE SECTION CONSEIL */}
-      <section aria-labelledby="conseils-accompagnement" className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center bg-slate-50 p-6 rounded-2xl border border-slate-100 mb-12">    
-        <div className="md:col-span-2">
-          <h2 id="conseils-accompagnement" className="text-xl font-bold text-slate-900 tracking-tight mb-3">
-            Conseils et accompagnement sur-mesure
-          </h2>
-          <p className="text-base">
-            Nous vous accompagnons à chaque étape, du lavage à haute température de votre linge jusqu'aux gestes de prévention lors de vos déplacements pour éviter toute réinfestation.
-          </p>
-        </div>
-        <div className="md:col-span-1 relative w-full h-[150px] rounded-xl overflow-hidden border border-slate-200 shadow-xs">
-          <Image 
-            src="/image17.png" 
-            alt="Technicien prodiguant des conseils anti-punaises de lit" 
-            fill
-            sizes="(max-width: 768px) 100vw, 300px"
-            className="object-cover"
-          />
-        </div>
-      </section>
-
-      {/* 6. CONCLUSION / CALL TO ACTION */}
-      <div className="text-center bg-brand-blue text-white p-6 rounded-2xl shadow-xs mt-8">
-        <p className="text-base sm:text-lg font-medium leading-relaxed">
-          Contactez notre équipe pour toute <strong className="underline">intervention contre les punaises de lit à Perpignan</strong>, Canet-en-Roussillon, Saint-Estève, ou ailleurs dans les <strong className="font-bold">Pyrénées-Orientales</strong>.<br className="hidden sm:inline"/>
-          Nous intervenons rapidement, avec une discrétion absolue et des résultats garantis.
-        </p>
-      </div>
-
     </section>
   )
 }

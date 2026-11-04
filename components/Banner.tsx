@@ -70,8 +70,8 @@ export default function Banner() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-none uppercase mb-4"
         >
-          Invasion de Nuisibles ? <br />
-          <span className="text-brand-red">Intervention Rapide 7j/7</span>
+          Dératisation &amp; désinsectisation <br />
+          <span className="text-brand-red">à Perpignan et dans le 66</span>
         </motion.h1>
 
         <motion.p 
@@ -80,7 +80,7 @@ export default function Banner() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-slate-200 text-base sm:text-xl max-w-2xl font-medium mb-10 drop-shadow-sm leading-relaxed"
         >
-          Experts en dératisation, désinsectisation et destruction de nids de frelons dans les Pyrénées-Orientales (66). Devis gratuit et immédiat.
+          Rats, souris, cafards, punaises de lit, guêpes et frelons : des traitements adaptés à chaque infestation dans les Pyrénées-Orientales. Devis gratuit.
         </motion.p>
 
         {/* LES BOUTONS D'ACTION (CTA) */}

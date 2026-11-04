@@ -18,11 +18,11 @@ export default function Equipment() {
         {/* BLOC DE TEXTE RESTRUCTURÉ */}
         <div className="bg-slate-50 border border-slate-100 rounded-2xl p-8 sm:p-10 shadow-sm">
           <p className="text-slate-700 text-base sm:text-lg leading-relaxed mb-6 font-medium">
-            Implantée au cœur des <strong className="text-slate-900 font-bold">Pyrénées-Orientales</strong>, <span className="text-brand-blue font-bold">Protection Nuisibles</span> met à votre service son expertise locale pour lutter efficacement contre tous types de parasites.
+            Implantée dans les <strong className="text-slate-900 font-bold">Pyrénées-Orientales</strong>, <span className="text-brand-blue font-bold">Protection Nuisibles</span> accompagne les particuliers et les professionnels dans la lutte contre les rats, souris, blattes, punaises de lit, guêpes et frelons. Chaque situation nécessite de distinguer le nuisible, les signes d'activité et les conditions d'occupation des lieux.
           </p>
           
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-8">
-            Que ce soit pour une dératisation, une désinsectisation ou un traitement préventif, notre équipe intervient rapidement, discrètement et avec des solutions certifiées. Faites confiance à des spécialistes engagés, à l’écoute de vos besoins, pour protéger votre habitat et vos locaux en toute sérénité.
+            Notre démarche repose sur un diagnostic utile, la définition des zones à traiter et des conseils pour prévenir les réinfestations. Une habitation, un restaurant, une réserve ou un hébergement saisonnier n'imposent pas les mêmes précautions. Nous expliquons les étapes proposées et les consignes de sécurité selon le protocole retenu.
           </p>
 
           {/* PETITS BADGES DE RASSURANCE EN BAS */}
