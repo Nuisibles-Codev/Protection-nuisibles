@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/desinsectisation',
     '/punaises',
     '/frelons',
+    '/depigeonnage',
     '/zones-intervention',
     ...interventionZones.map((zone) => `/zones-intervention/${zone.slug}`),
     '/politique-confidentialite',
@@ -31,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     if (route === '') {
       priority = 1.0
       changeFrequency = 'daily'
-    } else if (['/deratisation', '/desinsectisation', '/punaises', '/frelons'].includes(route)) {
+    } else if (['/deratisation', '/desinsectisation', '/punaises', '/frelons', '/depigeonnage'].includes(route)) {
       priority = 0.9
       changeFrequency = 'weekly'
     } else if (route === '/zones-intervention' || route.startsWith('/zones-intervention/')) {

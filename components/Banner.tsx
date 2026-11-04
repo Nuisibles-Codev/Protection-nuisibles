@@ -80,7 +80,7 @@ export default function Banner() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-slate-200 text-base sm:text-xl max-w-2xl font-medium mb-10 drop-shadow-sm leading-relaxed"
         >
-          Rats, souris, cafards, punaises de lit, guêpes et frelons : des traitements adaptés à chaque infestation dans les Pyrénées-Orientales. Devis gratuit.
+          Rats, souris, cafards, punaises de lit, guêpes, frelons et dépigeonnage : des solutions adaptées à chaque problème dans les Pyrénées-Orientales. Devis gratuit.
         </motion.p>
 
         {/* LES BOUTONS D'ACTION (CTA) */}

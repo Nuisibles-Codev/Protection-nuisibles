@@ -20,6 +20,7 @@ export default function Header() {
     { href: '/desinsectisation', label: 'Désinsectisation' },
     { href: '/deratisation', label: 'Dératisation' },
     { href: '/frelons', label: 'Guêpes / Frelons' },
+    { href: '/depigeonnage', label: 'Dépigeonnage' },
     { href: '/zones-intervention', label: 'Zones' },
     { href: '/pictures', label: 'Photos' },
     { href: '/savoir-faire', label: 'Qui sommes-nous ?' },
@@ -49,7 +50,7 @@ export default function Header() {
         </Link>
 
         {/* NAVIGATION DESKTOP (Masquée sur mobile/tablette) */}
-        <nav className="hidden xl:flex items-center gap-1">
+        <nav className="hidden 2xl:flex items-center gap-1">
           {navLinks.map((link: NavLink) => (
             <Link
               key={link.href}
@@ -85,7 +86,7 @@ export default function Header() {
           {/* BOUTON HAMBURGER MOBILE (Masqué sur PC) */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="xl:hidden flex flex-col justify-center items-center w-11 h-11 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200/60 transition-colors shrink-0"
+            className="2xl:hidden flex flex-col justify-center items-center w-11 h-11 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200/60 transition-colors shrink-0"
             aria-label="Menu de navigation"
             aria-expanded={isMenuOpen}
           >
@@ -107,7 +108,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 right-0 bg-white border-b border-slate-200 shadow-xl xl:hidden overflow-hidden"
+            className="absolute top-full left-0 right-0 bg-white border-b border-slate-200 shadow-xl 2xl:hidden overflow-hidden"
           >
             <ul className="py-4 px-4 space-y-1">
               {navLinks.map((link: NavLink) => (

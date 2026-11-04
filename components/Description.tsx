@@ -33,6 +33,16 @@ const services = [
     points: ['Inspection de la literie', 'Préparation des chambres', 'Traitement et contrôle adaptés'],
   },
   {
+    id: 'depigeonnage',
+    topic: 'depigeonnage' as const,
+    title: 'Dépigeonnage à Perpignan : protéger balcons, façades et toitures',
+    text1: "Des pigeons stationnent sur une corniche, au-dessus d'un commerce ou sous un équipement technique ? Le dépigeonnage consiste d'abord à identifier leurs points de repos et les accès au bâtiment, puis à choisir des moyens de dissuasion adaptés aux surfaces.",
+    text2: "Selon la configuration, des pics anti-pigeons, des filets de protection ou d'autres dispositifs physiques peuvent être étudiés. Avant toute pose, il faut vérifier la présence de nids occupés, protéger les espèces concernées et préserver l'accès à l'entretien des façades ou des toitures.",
+    url: '/depigeonnage',
+    link: 'Notre prestation de dépigeonnage',
+    points: ['Pics et filets anti-pigeons', 'Balcons et toitures', 'Protection des bâtiments'],
+  },
+  {
     id: 'frelons',
     topic: 'frelons' as const,
     title: 'Destruction de nids de frelons et de guêpes',
@@ -51,7 +61,7 @@ export default function Description() {
         <div className="mb-8 max-w-4xl">
           <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-blue">Une entreprise locale dans le 66</p>
           <h2 id="zone-home" className="mb-4 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">Dératisation et désinsectisation à Perpignan et dans les Pyrénées-Orientales</h2>
-          <p className="text-lg leading-relaxed text-slate-700">Protection Nuisibles accompagne les particuliers et professionnels confrontés à des rats, souris, insectes rampants, punaises de lit ou nids de guêpes et frelons. Le choix du traitement dépend toujours du nuisible identifié et de la configuration du bâtiment.</p>
+          <p className="text-lg leading-relaxed text-slate-700">Protection Nuisibles accompagne les particuliers et professionnels confrontés à des rats, souris, insectes rampants, punaises de lit, nids de guêpes et frelons ou pigeons occupant les bâtiments. Le choix du traitement dépend toujours du nuisible identifié et de la configuration du bâtiment.</p>
         </div>
 
         <div className="grid items-stretch gap-8 rounded-3xl border border-slate-200 bg-slate-50 p-6 lg:grid-cols-2 lg:p-8">

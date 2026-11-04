@@ -1,19 +1,21 @@
 import Link from 'next/link'
 import { getInterventionZone, type InterventionZone } from '@/lib/intervention-zones'
 
-type ServiceName = 'deratisation' | 'desinsectisation' | 'frelons' | 'punaises'
+type ServiceName = 'deratisation' | 'desinsectisation' | 'frelons' | 'punaises' | 'depigeonnage'
 
 const headings: Record<ServiceName, string> = {
   deratisation: 'Dératisation dans les communes autour de Perpignan',
   desinsectisation: 'Désinsectisation à Perpignan et dans les villes proches',
   frelons: 'Destruction de nids de frelons et de guêpes dans le 66',
-  punaises: 'Traitement des punaises de lit dans les Pyrénées-Orientales'
+  punaises: 'Traitement des punaises de lit dans les Pyrénées-Orientales',
+  depigeonnage: 'Dépigeonnage et protection anti-pigeons dans les communes du 66'
 }
 const labels: Record<ServiceName, string> = {
   deratisation: 'Dératisation à',
   desinsectisation: 'Désinsectisation à',
   frelons: 'Nids de frelons à',
   punaises: 'Punaises de lit à',
+  depigeonnage: 'Dépigeonnage à',
 }
 const prioritySlugs = [
   'perpignan', 'cabestany', 'saint-esteve', 'bompas', 'toulouges',
