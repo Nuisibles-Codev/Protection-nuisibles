@@ -21,8 +21,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!zone) return { robots: { index: false } }
   const location = `${zone.name} (${zone.department})`
   const canonical = `${baseUrl}/zones-intervention/${zone.slug}`
-  const title = `Dératisation à ${location}, désinsectisation & frelons | Protection Nuisibles`
-  const description = `Dératisation à ${zone.name}, désinsectisation, punaises de lit et destruction de nids de frelons à ${zone.name}. Diagnostic adapté, devis gratuit.`
+  const title = `Dératisation à ${location} | Désinsectisation et frelons`
+  const description = `Dératisation, désinsectisation et destruction de nids de frelons à ${zone.name} : rats, souris, cafards et punaises de lit. Diagnostic et devis gratuit.`
   return {
     title,
     description,
@@ -54,17 +54,17 @@ export default async function InterventionVillePage({ params }: Props) {
 
   return (
     <main className="mx-auto w-full max-w-6xl px-4 pb-20 pt-10 text-slate-700 sm:px-6">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema).replace(/</g, '\\u003c') }} />
+      {!isAude && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema).replace(/</g, '\\u003c') }} />}
 
       <header className="mb-12 rounded-3xl bg-slate-950 px-6 py-10 text-white sm:px-10 sm:py-14">
         <p className="mb-4 text-sm font-bold uppercase tracking-wider text-blue-200">
-          Protection Nuisibles · · {zone.department === '66' ? 'Pyrénées-Orientales' : 'Aude'} · · {region.sector}
+          Protection Nuisibles · {zone.department === '66' ? 'Pyrénées-Orientales' : 'Aude'} · {region.sector}
         </p>
         <h1 className="mb-6 max-w-5xl text-3xl font-black leading-tight tracking-tight sm:text-5xl">
           Dératisation, désinsectisation et destruction de nids de frelons à {zone.name}
         </h1>
         <p className="max-w-4xl text-base leading-relaxed text-slate-200 sm:text-lg">
-          {zone.intro || `Vous recherchez un spécialiste anti-nuisibles à ${zone.name} ? Nous étudions les problèmes de rats, souris, insectes rampants, punaises de lit et nids de guêpes ou frelons. Le protocole dépend de l’espèce identifiée et de la configuration des lieux.`}
+          {zone.intro || `À ${zone.name}, dans le secteur ${region.label}, une demande de lutte contre les nuisibles peut concerner les rats, souris, insectes rampants, punaises de lit ou nids de guêpes et frelons. L'identification de l'espèce et l'examen du bâtiment orientent le traitement ; chaque situation demande un diagnostic adapté.`}
         </p>
         <div className="mt-7 flex flex-wrap gap-3">
           <Link href="/contact" className="rounded-xl bg-brand-red px-6 py-3 text-center font-bold text-white transition-colors hover:bg-red-700">Demander un devis gratuit</Link>
