@@ -1,217 +1,120 @@
-'use client';
+import Link from 'next/link'
+import ServiceVisual from '@/components/ServiceVisual'
 
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import Image from 'next/image';
-import Link from 'next/link';
+const services = [
+  {
+    id: 'deratisation',
+    topic: 'deratisation' as const,
+    title: 'Dératisation à Perpignan : rats et souris',
+    text1: "Des bruits dans les combles, des emballages rongés ou des déjections dans une réserve peuvent révéler la présence de rongeurs. Un traitement efficace commence par l'identification de l'espèce, la localisation des passages et l'analyse des ressources accessibles.",
+    text2: "Protection Nuisibles accompagne particuliers, syndics, commerces et établissements disposant de zones de stockage. Selon le diagnostic, des dispositifs adaptés et sécurisés sont mis en place, puis complétés par des recommandations d'obturation et de surveillance pour limiter de nouvelles intrusions.",
+    url: '/deratisation',
+    link: 'Notre prestation de dératisation',
+    points: ['Inspection des accès et des indices', 'Mesures ciblées et prévention', 'Maisons, commerces et réserves'],
+  },
+  {
+    id: 'desinsectisation',
+    topic: 'blattes' as const,
+    title: 'Désinsectisation : cafards, blattes, fourmis et puces',
+    text1: "Une invasion de cafards dans une cuisine, un passage régulier de fourmis près des aliments ou une infestation de puces nécessite de reconnaître précisément l'insecte. Les produits et les méthodes diffèrent selon les espèces et les pièces touchées.",
+    text2: "Nous étudions les points chauds, l'humidité, les refuges et les conditions d'utilisation du bâtiment avant de proposer un traitement de désinsectisation. Les locaux professionnels et restaurants demandent notamment des mesures adaptées à leurs contraintes sanitaires et à la présence de denrées.",
+    url: '/desinsectisation',
+    link: 'Découvrir la désinsectisation',
+    points: ['Identification de l’insecte', 'Traitements selon les foyers', 'Conseils d’hygiène et de suivi'],
+  },
+  {
+    id: 'punaises',
+    topic: 'punaises' as const,
+    title: 'Traitement des punaises de lit dans le 66',
+    text1: "Les punaises de lit peuvent se dissimuler dans les coutures de matelas, les sommiers, les têtes de lit et le mobilier voisin. Des piqûres ou des traces sombres peuvent alerter, mais la confirmation du nuisible demande un examen attentif des zones concernées.",
+    text2: "Que vous occupiez un appartement, une maison ou un hébergement touristique, nous vous aidons à préparer les pièces pour un protocole adapté. Le traitement, les consignes de réoccupation et les contrôles éventuels sont définis selon le diagnostic, sans promettre un résultat identique dans tous les logements.",
+    url: '/punaises',
+    link: 'Traiter les punaises de lit',
+    points: ['Inspection de la literie', 'Préparation des chambres', 'Traitement et contrôle adaptés'],
+  },
+  {
+    id: 'frelons',
+    topic: 'frelons' as const,
+    title: 'Destruction de nids de frelons et de guêpes',
+    text1: "Un nid de frelons asiatiques dans un arbre, une activité de guêpes sous une toiture ou des allées et venues près d'un volet nécessitent d'abord une identification à distance. La hauteur, l'accessibilité et les zones fréquentées déterminent les précautions.",
+    text2: "Nos interventions de destruction de nids sont préparées pour sécuriser les occupants et choisir une technique adaptée au site. Ne tentez jamais de brûler, d'arroser ou d'obstruer un nid actif : un diagnostic professionnel limite les risques de piqûres et de mauvaises manipulations.",
+    url: '/frelons',
+    link: 'Faire traiter un nid de guêpes ou de frelons',
+    points: ['Identification des espèces', 'Sécurisation des abords', 'Intervention selon l’accès au nid'],
+  },
+]
 
 export default function Description() {
-  // Hooks Intersection Observer pour déclencher les animations au défilement
-  const { ref: ref4, inView: inView4 } = useInView({ triggerOnce: false, threshold: 0.0 });
-  const { ref: ref6, inView: inView6 } = useInView({ triggerOnce: false, threshold: 0.0 });
-  const { ref: ref7, inView: inView7 } = useInView({ triggerOnce: false, threshold: 0.0 });
-  const { ref: ref8, inView: inView8 } = useInView({ triggerOnce: false, threshold: 0.0 });
-  const { ref: ref9, inView: inView9 } = useInView({ triggerOnce: false, threshold: 0.0 });
-  const { ref: ref10, inView: inView10 } = useInView({ triggerOnce: false, threshold: 0.0 });
-  const { ref: ref11, inView: inView11 } = useInView({ triggerOnce: false, threshold: 0.0 });
-  const { ref: ref12, inView: inView12 } = useInView({ triggerOnce: false, threshold: 0.0 });
-  const { ref: ref13, inView: inView13 } = useInView({ triggerOnce: false, threshold: 0.0 });
-
   return (
-    <AnimatePresence>
-      <section className="pt-8 pb-16 bg-white px-4 sm:px-6 max-w-6xl mx-auto">
-        
-        {/* TITRE 1 : ZONE D'INTERVENTION */}
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-black text-slate-900 tracking-tight">
-            Zone d'intervention
-          </h2>
+    <div className="w-full bg-white">
+      <section aria-labelledby="zone-home" className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+        <div className="mb-8 max-w-4xl">
+          <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-blue">Une entreprise locale dans le 66</p>
+          <h2 id="zone-home" className="mb-4 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">Dératisation et désinsectisation à Perpignan et dans les Pyrénées-Orientales</h2>
+          <p className="text-lg leading-relaxed text-slate-700">Protection Nuisibles accompagne les particuliers et professionnels confrontés à des rats, souris, insectes rampants, punaises de lit ou nids de guêpes et frelons. Le choix du traitement dépend toujours du nuisible identifié et de la configuration du bâtiment.</p>
         </div>
 
-        {/* SECTION LOCALISATION (CARTE + TEXTE INTRO) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-20 bg-slate-50 p-6 rounded-2xl border border-slate-100">
-          {/* Conteneur de la carte Google Maps */}
-          <div className="w-full h-[350px] rounded-xl overflow-hidden shadow-xs border border-slate-200">
+        <div className="grid items-stretch gap-8 rounded-3xl border border-slate-200 bg-slate-50 p-6 lg:grid-cols-2 lg:p-8">
+          <div className="min-h-[300px] overflow-hidden rounded-2xl border border-slate-200 bg-white lg:min-h-[420px]">
             <iframe
+              title="Carte de Perpignan et du secteur d'intervention"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46915.49122963929!2d2.863226134086672!3d42.69910031702662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b06e4e80fd88fd%3A0x1c83306520f2dd4f!2sPerpignan!5e0!3m2!1sfr!2sfr!4v1745486342047!5m2!1sfr!2sfr"
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-full border-0"
+              className="h-full min-h-[300px] w-full border-0 lg:min-h-[420px]"
             />
           </div>
-          
-          {/* Texte introductif animé */}
-          <div className="text-slate-700 text-lg leading-relaxed">
-            <motion.p
-              ref={ref4}
-              initial={{ opacity: 0, y: 30 }} 
-              animate={{ opacity: inView4 ? 1 : 0, y: inView4 ? 0 : 30 }}
-              exit={{ opacity: 0, y: 30 }}  
-              transition={{ duration: 0.5 }}
-            > 
-              Basée dans les <strong className="text-brand-blue font-semibold">Pyrénées-Orientales (66)</strong>, Protection Nuisibles intervient rapidement sur tout le département : Perpignan, Canet-en-Roussillon, Argelès-sur-Mer, Céret, Prades et leurs alentours.
-              Nous vous proposons des solutions efficaces contre les rats, souris, insectes, guêpes, frelons et autres nuisibles, aussi bien en milieu urbain que rural.
-            </motion.p>
+          <div className="flex flex-col justify-center gap-4 leading-relaxed text-slate-700">
+            <h3 className="text-2xl font-bold text-slate-900">Intervention dans le Roussillon et ses communes</h3>
+            <p>Notre zone de référence couvre Perpignan et les Pyrénées-Orientales : Cabestany, Saint-Estève, Canet-en-Roussillon, Rivesaltes, Toulouges, Argelès-sur-Mer, Saint-Cyprien, Elne, Thuir, Le Barcarès, Céret et Prades, entre autres.</p>
+            <p>Dans un centre-ville, les problèmes de rongeurs peuvent concerner les caves, gaines techniques et commerces. Dans une maison avec jardin, les accès aux annexes, la toiture ou les dépendances peuvent nécessiter un contrôle différent. Sur le littoral, les résidences secondaires et les hébergements saisonniers ajoutent des contraintes d'occupation à anticiper.</p>
+            <p>Pour chaque demande, précisez votre commune, les indices repérés et le type de bâtiment. Nous pourrons vous orienter vers une prestation adaptée et confirmer les modalités d'intervention.</p>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link href="/zones-intervention" className="rounded-xl bg-brand-blue px-5 py-3 font-bold text-white hover:bg-blue-800">Voir les communes desservies</Link>
+              <Link href="/contact" className="rounded-xl border border-slate-300 px-5 py-3 font-bold text-brand-blue hover:bg-white">Demander un devis</Link>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div className="mb-16 text-center">
-          <p className="mb-4 text-base text-slate-700">Perpignan, Canet-en-Roussillon, Argelès-sur-Mer, Saint-Cyprien, Saint-Estève, Cabestany, Rivesaltes, Elne, Céret, Prades et Le Barcarès.</p>
-          <Link href="/zones-intervention" className="inline-flex rounded-xl bg-brand-blue px-6 py-3 font-bold text-white transition-colors hover:bg-blue-800">Découvrir toutes nos zones d’intervention</Link>
+      <section aria-labelledby="prestations-home" className="mx-auto max-w-6xl px-4 pb-14 sm:px-6">
+        <div className="mb-9 max-w-4xl">
+          <p className="mb-2 text-sm font-bold uppercase tracking-wider text-brand-blue">Lutte anti-nuisibles professionnelle</p>
+          <h2 id="prestations-home" className="mb-4 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">Nos traitements contre les nuisibles dans le 66</h2>
+          <p className="text-lg leading-relaxed text-slate-700">Il n'existe pas de traitement unique contre tous les nuisibles. Voici comment nous abordons les principales demandes à Perpignan et dans les communes voisines : inspection, choix d'une méthode adaptée et conseils pour limiter les récidives.</p>
         </div>
-
-        {/* TITRE 2 : POURQUOI CHOISIR */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-            Pourquoi choisir Protection Nuisibles ?
-          </h2>
-        </div>
-
-        {/* LISTE DES ATOUTS / ARTICLES */}
-        <div className="bg-white">
-          <ul className="space-y-12">
-            
-            {/* ATOUT 1 */}
-            <li className="flex flex-col md:flex-row items-center gap-8 bg-slate-50/50 p-6 rounded-2xl border border-slate-100/80">
-              <div className="w-full md:w-1/3 flex justify-center">
-                <motion.div
-                  ref={ref6}  
-                  initial={{ opacity: 0, x: -50 }} 
-                  animate={{ opacity: inView6 ? 1 : 0, x: inView6 ? 0 : -50 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Image
-                    src="/image12.png"
-                    alt="Équipement professionnel contre les rongeurs et insectes"
-                    width={300}
-                    height={300}
-                    className="rounded-xl object-cover shadow-xs"
-                  />
-                </motion.div>
+        <div className="space-y-7">
+          {services.map((service, index) => (
+            <article key={service.id} className="grid items-start gap-7 rounded-3xl border border-slate-200 bg-slate-50/70 p-5 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-9 md:p-7">
+              <div className={index % 2 === 1 ? 'md:order-2' : ''}>
+                <ServiceVisual topic={service.topic} className="w-full" />
               </div>
-              <div className="w-full md:w-2/3">
-                <motion.p
-                  ref={ref7}  
-                  initial={{ opacity: 0, x: 50 }} 
-                  animate={{ opacity: inView7 ? 1 : 0, x: inView7 ? 0 : 50 }}
-                  exit={{ opacity: 0, x: 50 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-slate-600 text-base sm:text-lg leading-relaxed"
-                >
-                  <span className="block text-xl font-bold text-slate-900 mb-2">Interventions rapides et efficaces</span>
-                  Nous agissons en urgence ou sur rendez-vous pour éradiquer durablement les infestations et protéger vos espaces de vie ou de travail.
-                </motion.p>
+              <div className="flex h-full flex-col justify-center">
+                <h3 className="mb-4 text-2xl font-black leading-snug text-slate-900">{service.title}</h3>
+                <p className="mb-3 leading-relaxed text-slate-700">{service.text1}</p>
+                <p className="mb-4 leading-relaxed text-slate-700">{service.text2}</p>
+                <ul className="mb-5 flex flex-wrap gap-2">
+                  {service.points.map(item => <li key={item} className="rounded-full border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700">{item}</li>)}
+                </ul>
+                <Link href={service.url} className="font-bold text-brand-blue underline underline-offset-4">{service.link}</Link>
               </div>
-            </li>
-
-            {/* ATOUT 2 */}
-            <li className="flex flex-col md:flex-row-reverse items-center gap-8 bg-slate-50/50 p-6 rounded-2xl border border-slate-100/80">
-              <div className="w-full md:w-1/3 flex justify-center">
-                <motion.div
-                  ref={ref9}  
-                  initial={{ opacity: 0, x: 50 }} 
-                  animate={{ opacity: inView9 ? 1 : 0, x: inView9 ? 0 : 50 }}
-                  exit={{ opacity: 0, x: 50 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Image
-                    src="/image3.png"
-                    alt="Traitement contre les insectes volants et rampants"
-                    width={200}
-                    height={200}
-                    className="rounded-xl object-cover shadow-xs"
-                  />
-                </motion.div>
-              </div>
-              <div className="w-full md:w-2/3">
-                <motion.p
-                  ref={ref8}  
-                  initial={{ opacity: 0, x: -50 }} 
-                  animate={{ opacity: inView8 ? 1 : 0, x: inView8 ? 0 : -50 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-slate-600 text-base sm:text-lg leading-relaxed"
-                > 
-                  <span className="block text-xl font-bold text-slate-900 mb-2">Produits homologués et respectueux de l'environnement</span>
-                  Nous utilisons uniquement des traitements agréés, sûrs pour votre famille, vos animaux domestiques et respectueux de l'écosystème local.
-                </motion.p>
-              </div>
-            </li>
-
-            {/* ATOUT 3 */}
-            <li className="flex flex-col md:flex-row items-center gap-8 bg-slate-50/50 p-6 rounded-2xl border border-slate-100/80">
-              <div className="w-full md:w-1/3 flex justify-center">
-                <motion.div
-                  ref={ref10}  
-                  initial={{ opacity: 0, x: -50 }} 
-                  animate={{ opacity: inView10 ? 1 : 0, x: inView10 ? 0 : -50 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Image
-                    src="/image2.png"
-                    alt="Expertise anti-nuisibles en milieu rural et urbain"
-                    width={200}
-                    height={200}
-                    className="rounded-xl object-cover shadow-xs"
-                  />
-                </motion.div>
-              </div>
-              <div className="w-full md:w-2/3">
-                <motion.p
-                  ref={ref11}  
-                  initial={{ opacity: 0, x: 50 }} 
-                  animate={{ opacity: inView11 ? 1 : 0, x: inView11 ? 0 : 50 }}
-                  exit={{ opacity: 0, x: 50 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-slate-600 text-base sm:text-lg leading-relaxed"
-                >
-                  <span className="block text-xl font-bold text-slate-900 mb-2">Expertise locale reconnue</span>
-                  Notre parfaite connaissance du terrain et des comportements des nuisibles dans les Pyrénées-Orientales nous permet d'agir efficacement en toute situation.
-                </motion.p>
-              </div>
-            </li>
-
-            {/* ATOUT 4 */}
-            <li className="flex flex-col md:flex-row-reverse items-center gap-8 bg-slate-50/50 p-6 rounded-2xl border border-slate-100/80">
-              <div className="w-full md:w-1/3 flex justify-center">
-                <motion.div
-                  ref={ref13} 
-                  initial={{ opacity: 0, x: 50 }} 
-                  animate={{ opacity: inView13 ? 1 : 0, x: inView13 ? 0 : 50 }}
-                  exit={{ opacity: 0, x: 50 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Image
-                    src="/image1.png"
-                    alt="Technicien équipé pour intervention anti-nuisibles"
-                    width={300}
-                    height={300}
-                    className="rounded-xl object-cover shadow-xs"
-                  />
-                </motion.div>
-              </div>
-               <div className="w-full md:w-2/3">
-                <motion.p
-                  ref={ref12}  
-                  initial={{ opacity: 0, x: -50 }} 
-                  animate={{ opacity: inView12 ? 1 : 0, x: inView12 ? 0 : -50 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-slate-600 text-base sm:text-lg leading-relaxed"
-                >
-                  <span className="block text-xl font-bold text-slate-900 mb-2">Matériel professionnel haut de gamme</span>
-                  Nous sommes équipés des dernières technologies pour garantir des interventions rapides, précises et sûres contre tous types d'infestations.
-                </motion.p>
-              </div>
-            </li>
-
-          </ul>
+            </article>
+          ))}
         </div>
       </section>
-    </AnimatePresence>
-  );
+
+      <section aria-labelledby="pourquoi-home" className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
+        <div className="mb-7 max-w-4xl">
+          <h2 id="pourquoi-home" className="mb-4 text-3xl font-black text-slate-900 sm:text-4xl">Pourquoi choisir Protection Nuisibles ?</h2>
+          <p className="text-lg leading-relaxed text-slate-700">Notre approche associe un diagnostic concret, des précautions adaptées aux occupants et des conseils de prévention. L'objectif est d'apporter une réponse proportionnée, plutôt que de multiplier les traitements sans avoir localisé l'origine du problème.</p>
+        </div>
+        <div className="grid gap-5 md:grid-cols-3">
+          <article className="rounded-2xl border border-slate-200 p-6"><h3 className="mb-3 text-xl font-bold text-slate-900">Diagnostic avant intervention</h3><p className="leading-relaxed">Nous distinguons les espèces et recherchons leurs points de passage, foyers et causes favorisantes. Cela permet de cibler les zones utiles et de préciser la méthode proposée sur le devis.</p></article>
+          <article className="rounded-2xl border border-slate-200 p-6"><h3 className="mb-3 text-xl font-bold text-slate-900">Sécurité et consignes claires</h3><p className="leading-relaxed">La présence d'enfants, d'animaux, d'aliments ou de locaux fréquentés est prise en compte. Les précautions et les conditions de réoccupation sont adaptées aux moyens utilisés.</p></article>
+          <article className="rounded-2xl border border-slate-200 p-6"><h3 className="mb-3 text-xl font-bold text-slate-900">Prévention et suivi utiles</h3><p className="leading-relaxed">Une fois le foyer identifié, le colmatage des accès, la surveillance ou l'entretien de certaines zones peuvent limiter les nouvelles intrusions. Le suivi dépend du nuisible traité.</p></article>
+        </div>
+      </section>
+    </div>
+  )
 }
