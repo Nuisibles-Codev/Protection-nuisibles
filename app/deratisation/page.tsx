@@ -1,5 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
+import ServiceLocalLinks from '@/components/ServiceLocalLinks'
 import DeratisationMenu from '@/components/DeratisationMenu'
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function DeratisationPage() {
   return (
     <main className="w-full">       
       <DeratisationMenu />
+      <ServiceLocalLinks service="deratisation" />
     </main>    
   )
 }

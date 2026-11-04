@@ -1,5 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
+import ServiceLocalLinks from '@/components/ServiceLocalLinks'
 import DesinsectisationMenu from '@/components/DesinsectisationMenu'
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function DesinsectisationPage() {
   return (
     <main className="w-full">
       <DesinsectisationMenu />   
+      <ServiceLocalLinks service="desinsectisation" />
     </main>
   )
 }

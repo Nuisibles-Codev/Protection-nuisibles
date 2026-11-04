@@ -1,5 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
+import ServiceLocalLinks from '@/components/ServiceLocalLinks'
 import PunaiseDeLitMenu from '@/components/PunaisesMenu'
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function PunaiseDeLitPage() {
   return (
     <main className="w-full">       
       <PunaiseDeLitMenu />
+      <ServiceLocalLinks service="punaises" />
     </main>    
   )
 }
