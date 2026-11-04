@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Dératisation et désinsectisation à Perpignan (66) | Protection Nuisibles',
-    description: "Dératisation à Perpignan, désinsectisation, traitement des punaises de lit et destruction de nids de frelons dans le 66. Diagnostic adapté et devis gratuit.",
+    description: "Dératisation à Perpignan, désinsectisation, punaises de lit, nids de frelons et dépigeonnage dans le 66. Diagnostic adapté et devis gratuit.",
     url: 'https://www.protection-nuisibles.fr',
     siteName: 'Protection Nuisibles',
     locale: 'fr_FR',
