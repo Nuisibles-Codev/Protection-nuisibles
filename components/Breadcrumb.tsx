@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { interventionZones } from '@/lib/intervention-zones';
+import { zoneBreadcrumbNames } from '@/lib/zone-breadcrumb-labels';
 
 // Dictionnaire pour traduire les URLs en titres lisibles (et optimisés SEO)
 const routeLabels: Record<string, string> = {
@@ -32,7 +32,7 @@ export default function Breadcrumb() {
   // Construction des éléments pour le Fil d'Ariane & Données structurées
   const breadcrumbItems = segments.map((segment, index) => {
     const href = '/' + segments.slice(0, index + 1).join('/');
-    const label = routeLabels[segment] || interventionZones.find((zone) => zone.slug === segment)?.name || segment.replace(/-/g, ' ');
+    const label = routeLabels[segment] || zoneBreadcrumbNames[segment] || segment.replace(/-/g, ' ');
     return { label, href };
   });
 
