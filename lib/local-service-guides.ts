@@ -62,13 +62,21 @@ const followUpGuides = [
   "Les moyens de prévention sont choisis après diagnostic : une mesure pertinente contre les rats peut être inutile contre les punaises de lit."
 ]
 
+// Variation déterministe indépendante par commune et par type de nuisible.
+function pick(insee: number, salt: number, size: number) {
+  let value = (insee ^ salt) >>> 0
+  value = Math.imul(value ^ (value >>> 16), 0x45d9f3b)
+  value = Math.imul(value ^ (value >>> 16), 0x45d9f3b)
+  return ((value ^ (value >>> 16)) >>> 0) % size
+}
+
 export function serviceGuides(zone: InterventionZone) {
-  const i=Number(zone.code)
+  const i = Number(zone.code)
   return {
-    rats: ratGuides[(i*7+1)%ratGuides.length],
-    insects: insectGuides[(i*3+2)%insectGuides.length],
-    bedbugs: bedbugGuides[(i*11+5)%bedbugGuides.length],
-    nests: hornetGuides[(i*13+7)%hornetGuides.length],
-    followUp: followUpGuides[(i*17+3)%followUpGuides.length],
+    rats: ratGuides[pick(i, 17, ratGuides.length)],
+    insects: insectGuides[pick(i, 1327, insectGuides.length)],
+    bedbugs: bedbugGuides[pick(i, 30841, bedbugGuides.length)],
+    nests: hornetGuides[pick(i, 99031, hornetGuides.length)],
+    followUp: followUpGuides[pick(i, 71393, followUpGuides.length)],
   }
 }
