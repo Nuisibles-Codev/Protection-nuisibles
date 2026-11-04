@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-type Topic = 'punaises' | 'blattes' | 'frelons' | 'deratisation'
+type Topic = 'punaises' | 'blattes' | 'frelons' | 'deratisation' | 'depigeonnage'
 
 const sources = {
   punaises: {
@@ -26,6 +26,14 @@ const sources = {
     credit: 'Photo : Francis ITHURBURU',
     url: 'https://commons.wikimedia.org/wiki/File:Vespa_velutina_nest.JPG',
     license: 'CC BY-SA 3.0',
+  },
+  depigeonnage: {
+    src: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Bird_control_spikes.JPG',
+    alt: 'Pigeons sur une corniche de bâtiment équipée de dispositifs anti-oiseaux',
+    caption: 'Pigeons sur une corniche : évaluer les points de perchage et les dispositifs adaptés',
+    credit: 'Photo : Rselzer1',
+    url: 'https://commons.wikimedia.org/wiki/File:Bird_control_spikes.JPG',
+    license: 'CC BY-SA 4.0',
   },
   deratisation: {
     src: '/image12.png',

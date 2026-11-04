@@ -12,6 +12,7 @@ const routeLabels: Record<string, string> = {
   desinsectisation: 'Désinsectisation',
   deratisation: 'Dératisation',
   frelons: 'Guêpes & Frelons',
+  depigeonnage: 'Dépigeonnage',
   pictures: 'Galerie Photos',
   'savoir-faire': 'Qui sommes-nous ?',
   contact: 'Contact',

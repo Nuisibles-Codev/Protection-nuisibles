@@ -20,6 +20,7 @@ export default function Header() {
     { href: '/desinsectisation', label: 'Désinsectisation' },
     { href: '/deratisation', label: 'Dératisation' },
     { href: '/frelons', label: 'Guêpes / Frelons' },
+    { href: '/depigeonnage', label: 'Dépigeonnage' },
     { href: '/zones-intervention', label: 'Zones' },
     { href: '/pictures', label: 'Photos' },
     { href: '/savoir-faire', label: 'Qui sommes-nous ?' },
@@ -50,11 +51,37 @@ export default function Header() {
 
         {/* NAVIGATION DESKTOP (Masquée sur mobile/tablette) */}
         <nav className="hidden xl:flex items-center gap-1">
-          {navLinks.map((link: NavLink) => (
+          <Link
+            href="/"
+            className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 hover:text-brand-blue"
+          >
+            Accueil
+          </Link>
+          <details className="group relative">
+            <summary className="cursor-pointer list-none rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 hover:text-brand-blue">
+              Prestations <span className="ml-1 text-xs" aria-hidden="true">▾</span>
+            </summary>
+            <div className="absolute left-0 top-full z-50 mt-2 min-w-[255px] rounded-xl border border-slate-200 bg-white p-2 shadow-xl">
+              {navLinks.filter(link => ['/deratisation', '/desinsectisation', '/punaises', '/frelons', '/depigeonnage'].includes(link.href)).map(link => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={event => {
+                    const details = event.currentTarget.closest('details')
+                    if (details) details.open = false
+                  }}
+                  className="block rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 hover:text-brand-blue"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </details>
+          {navLinks.filter(link => !['/', '/deratisation', '/desinsectisation', '/punaises', '/frelons', '/depigeonnage'].includes(link.href)).map((link: NavLink) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-[14px] font-semibold text-slate-700 hover:text-brand-blue px-3 py-2 rounded-lg hover:bg-slate-50 transition-all duration-150"
+              className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 hover:text-brand-blue"
             >
               {link.label}
             </Link>

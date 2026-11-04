@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: url },
   openGraph: {
     title: "Zones anti-nuisibles autour de Perpignan | Protection Nuisibles",
-    description: "Consultez les pages par ville pour dératisation, désinsectisation et destruction de nids de frelons.",
+    description: "Consultez les pages par ville : dératisation, désinsectisation, frelons et protection anti-pigeons.",
     url,
     siteName: "Protection Nuisibles",
     locale: "fr_FR",
@@ -36,10 +36,10 @@ export default function ZonesInterventionPage() {
   return (
     <main className="mx-auto w-full max-w-7xl px-4 pb-20 pt-10 text-slate-700 sm:px-6">
       <header className="mb-12 max-w-5xl">
-        <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-blue">Dératisation · Désinsectisation · Frelons · Punaises de lit</p>
+        <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-blue">Dératisation · Désinsectisation · Frelons · Punaises de lit · Dépigeonnage</p>
         <h1 className="mb-5 text-3xl font-black leading-tight tracking-tight text-slate-900 sm:text-5xl">Zones d’intervention anti-nuisibles autour de Perpignan</h1>
         <p className="mb-5 text-lg leading-relaxed">
-          Protection Nuisibles intervient dans les Pyrénées-Orientales (66). Retrouvez nos informations de lutte contre les rats et souris, cafards, punaises de lit et nids de guêpes ou de frelons pour chaque commune du secteur. Nous recensons aussi les communes de l'Aude situées à proximité, pour lesquelles un déplacement doit être confirmé.
+          Protection Nuisibles intervient dans les Pyrénées-Orientales (66). Retrouvez nos informations de lutte contre les rats et souris, cafards, punaises de lit et nids de guêpes ou de frelons et la protection anti-pigeons pour chaque commune du secteur. Nous recensons aussi les communes de l'Aude situées à proximité, pour lesquelles un déplacement doit être confirmé.
         </p>
         <div className="flex flex-wrap gap-3">
           <a href="tel:+33757516414" className="rounded-xl bg-brand-red px-6 py-3 font-bold text-white">07 57 51 64 14</a>
@@ -53,7 +53,7 @@ export default function ZonesInterventionPage() {
           {featuredInterventionZones.map(zone => (
             <Link key={zone.slug} href={`/zones-intervention/${zone.slug}`} className="group rounded-2xl border border-slate-200 p-5 transition-all hover:border-brand-blue hover:shadow-sm">
               <h3 className="mb-2 text-lg font-bold text-slate-900 group-hover:text-brand-blue">{zone.name}</h3>
-              <p className="text-sm leading-relaxed text-slate-600">Dératisation, désinsectisation et destruction de nids</p>
+              <p className="text-sm leading-relaxed text-slate-600">Dératisation, désinsectisation, frelons et dépigeonnage</p>
               <span className="mt-3 block text-sm font-semibold text-brand-blue">Consulter la fiche locale</span>
             </Link>
           ))}
@@ -77,7 +77,7 @@ export default function ZonesInterventionPage() {
                 <span className="text-sm text-slate-500">{sector.zones.length} communes</span>
               </div>
               <p className="mb-5 max-w-4xl text-sm leading-relaxed text-slate-600">
-                Consultez les conseils de dératisation, désinsectisation, traitement de punaises de lit et destruction de nids de guêpes ou frelons adaptés au contexte de chaque commune.
+                Consultez les conseils de dératisation, désinsectisation, traitement de punaises de lit, destruction de nids de guêpes ou frelons et dépigeonnage adaptés au contexte de chaque commune.
               </p>
               <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
                 {sector.zones.map(zone => (

@@ -60,6 +60,11 @@ export default function Footer() {
                   Nids de Guêpes & Frelons
                 </Link>
               </li>
+              <li>
+                <Link href="/depigeonnage" className="hover:text-amber-500 transition-colors duration-150">
+                  Dépigeonnage et protection anti-pigeons
+                </Link>
+              </li>
             </ul>
           </div>
 

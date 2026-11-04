@@ -1,19 +1,21 @@
 import Link from 'next/link'
 import { getInterventionZone, type InterventionZone } from '@/lib/intervention-zones'
 
-type ServiceName = 'deratisation' | 'desinsectisation' | 'frelons' | 'punaises'
+type ServiceName = 'deratisation' | 'desinsectisation' | 'frelons' | 'punaises' | 'depigeonnage'
 
 const headings: Record<ServiceName, string> = {
   deratisation: 'Dératisation dans les communes autour de Perpignan',
   desinsectisation: 'Désinsectisation à Perpignan et dans les villes proches',
   frelons: 'Destruction de nids de frelons et de guêpes dans le 66',
-  punaises: 'Traitement des punaises de lit dans les Pyrénées-Orientales'
+  punaises: 'Traitement des punaises de lit dans les Pyrénées-Orientales',
+  depigeonnage: 'Dépigeonnage et protection anti-pigeons dans les communes du 66'
 }
 const labels: Record<ServiceName, string> = {
-  deratisation: 'Dératisation à',
-  desinsectisation: 'Désinsectisation à',
-  frelons: 'Nids de frelons à',
-  punaises: 'Punaises de lit à',
+  deratisation: 'Dératisation',
+  desinsectisation: 'Désinsectisation',
+  frelons: 'Nids de frelons',
+  punaises: 'Punaises de lit',
+  depigeonnage: 'Dépigeonnage',
 }
 const prioritySlugs = [
   'perpignan', 'cabestany', 'saint-esteve', 'bompas', 'toulouges',
@@ -34,7 +36,7 @@ export default function ServiceLocalLinks({ service }: { service: ServiceName })
       <nav aria-label={headings[service]} className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
         {zones.map(zone => (
           <Link key={zone.slug} href={`/zones-intervention/${zone.slug}`} className="rounded-xl border border-slate-200 px-4 py-3 text-sm font-semibold text-brand-blue transition-colors hover:border-brand-blue hover:bg-blue-50">
-            {labels[service]} {zone.name}
+            {labels[service]} {zone.name.startsWith('Le ') ? `au ${zone.name.slice(3)}` : zone.name.startsWith('Les ') ? `aux ${zone.name.slice(4)}` : `à ${zone.name}`}
           </Link>
         ))}
       </nav>
