@@ -4,8 +4,8 @@ import ServiceLocalLinks from '@/components/ServiceLocalLinks'
 import DeratisationMenu from '@/components/DeratisationMenu'
 
 export const metadata: Metadata = {
-  title: 'Dératisation à Perpignan - Protection Nuisibles 66',
-  description: "Expert en dératisation à Perpignan et dans les Pyrénées-Orientales (66). Élimination rapide et durable des rats et souris avec Protection Nuisibles.",
+  title: 'Dératisation à Perpignan : rats et souris | Protection Nuisibles',
+  description: "Dératisation à Perpignan et dans le 66 : recherche des passages de rats et souris, traitement ciblé et prévention des intrusions. Devis gratuit.",
   alternates: {
     canonical: 'https://www.protection-nuisibles.fr/deratisation',
   },
