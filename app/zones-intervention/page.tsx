@@ -47,17 +47,6 @@ export default function ZonesInterventionPage() {
         </div>
       </header>
 
-      <section aria-labelledby="referentiel" className="mb-12 grid gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:grid-cols-[1fr_auto] sm:items-center">
-        <div>
-          <h2 id="referentiel" className="mb-2 text-xl font-bold text-slate-900">244 communes françaises dans un rayon de 50 km</h2>
-          <p className="leading-relaxed">176 communes des Pyrénées-Orientales (66) et 68 de l'Aude (11), calculées d'après la distance à vol d'oiseau entre les centres géographiques des communes et celui de Perpignan. Il ne s'agit pas d'une promesse de délai ou de trajet routier.</p>
-        </div>
-        <div className="rounded-xl bg-white px-6 py-4 text-center shadow-sm">
-          <p className="text-3xl font-black text-brand-blue">50 km</p>
-          <p className="text-xs text-slate-500">Rayon géographique</p>
-        </div>
-      </section>
-
       <section aria-labelledby="priorites" className="mb-14">
         <h2 id="priorites" className="mb-5 text-2xl font-black text-slate-900">Principales communes autour de Perpignan</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
