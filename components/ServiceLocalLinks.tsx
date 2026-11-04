@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getInterventionZone } from '@/lib/intervention-zones'
+import { getInterventionZone, type InterventionZone } from '@/lib/intervention-zones'
 
 type ServiceName = 'deratisation' | 'desinsectisation' | 'frelons' | 'punaises'
 
@@ -24,7 +24,7 @@ const prioritySlugs = [
 ]
 
 export default function ServiceLocalLinks({ service }: { service: ServiceName }) {
-  const zones = prioritySlugs.map(getInterventionZone).filter((zone): zone is NonNullable<typeof zone> => Boolean(zone))
+  const zones = prioritySlugs.map(getInterventionZone).filter((zone): zone is InterventionZone => Boolean(zone))
   return (
     <section aria-labelledby="service-local-zones" className="mx-auto w-full max-w-6xl px-4 pb-16 pt-6 sm:px-6">
       <h2 id="service-local-zones" className="mb-4 text-2xl font-black text-slate-900">{headings[service]}</h2>
