@@ -39,7 +39,7 @@ export default function DeratisationMenu() {
         <div className="grid gap-5 md:grid-cols-2">
           {[
             ['1. Diagnostic des rongeurs', "Inspection des indices, identification des passages, estimation de l'activité et repérage des denrées ou points d'eau."],
-            ['2. Plan d'intervention', "Choix de dispositifs adaptés : capture, postes sécurisés et mesures complémentaires suivant les contraintes et le diagnostic."],
+            ["2. Plan d’intervention", "Choix de dispositifs adaptés : capture, postes sécurisés et mesures complémentaires suivant les contraintes et le diagnostic."],
             ['3. Traitement des zones concernées', "Mise en place ciblée dans les espaces identifiés, avec précautions tenant compte des enfants, animaux et denrées."],
             ['4. Contrôle et prévention', "Vérification de l'activité, conseils de nettoyage, d'entretien, de surveillance et d'obturation pour limiter les réintrusions."],
           ].map(([title, description]) => <article key={title} className="rounded-2xl border border-slate-200 p-6"><h3 className="mb-3 text-xl font-bold text-slate-900">{title}</h3><p className="leading-relaxed">{description}</p></article>)}
