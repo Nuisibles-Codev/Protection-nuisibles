@@ -10,8 +10,8 @@ export const metadata: Metadata = {
     canonical: 'https://www.protection-nuisibles.fr/desinsectisation',
   },
   openGraph: {
-    title: 'Désinsectisation à Perpignan – Protection Nuisibles 66',
-    description: "Lutte contre les cafards, blattes, fourmis et puces à Perpignan. Diagnostic, protocole de désinsectisation et prévention.",
+    title: 'Désinsectisation à Perpignan : cafards, fourmis, puces | Protection Nuisibles',
+    description: "Désinsectisation à Perpignan : cafards, blattes, fourmis et puces. Identification, traitement adapté et conseils de prévention dans les Pyrénées-Orientales.",
     url: 'https://www.protection-nuisibles.fr/desinsectisation',
     siteName: 'Protection Nuisibles',
     locale: 'fr_FR',
