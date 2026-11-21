@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import CookiePreferencesLink from "@/components/tracking/CookiePreferencesLink";
 import { featuredInterventionZones } from '@/lib/intervention-zones'
 import { Phone, MapPin, ShieldCheck, Mail } from 'lucide-react'
 
@@ -151,6 +152,8 @@ export default function Footer() {
             <Link href="/cgv" className="hover:text-amber-500 transition-colors duration-150">
               Conditions Générales (CGV)
             </Link>
+            <span className="text-slate-700" aria-hidden="true">•</span>
+            <CookiePreferencesLink className="hover:text-amber-500 transition-colors duration-150" />
           </nav>
 
           {/* COPYRIGHT & CRÉATEUR */}
